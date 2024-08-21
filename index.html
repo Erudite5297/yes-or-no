@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No Question</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <!-- Add your question here -->
+        <div class="question">Will you GPay me 500 rupees?</div>
+        
+        <!-- Yes and No buttons -->
+        <button class="btn" id="yes-btn">Yes</button>
+        <button class="btn" id="no-btn">No</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("no-btn");
+
+        noBtn.addEventListener("mouseover", function() {
+            // Generate random coordinates within the window
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noBtn.clientWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noBtn.clientHeight));
+
+            // Move the "No" button to the new position
+            noBtn.style.position = "absolute";
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        });
+    </script>
+</body>
+</html>
